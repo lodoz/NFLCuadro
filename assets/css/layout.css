@@ -1,0 +1,67 @@
+@font-face{
+    font-family: Endzone Sans Bold;
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/endzone-sans/bold.woff2") format("woff2"),url("../fonts/endzone-sans/bold.woff") format("woff");
+    }
+
+@font-face{
+    font-family: Endzone Sans Light;
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/endzone-sans/light.woff2") format("woff2"),url("../fonts/endzone-sans/light.woff") format("woff");
+    }
+
+@font-face{
+    font-family: Endzone Sans Medium;
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/endzone-sans/medium.woff2") format("woff2"),url("../fonts/endzone-sans/medium.woff") format("woff");
+    }
+
+body {
+    font-family: "Noto Serif", serif;
+}
+:root {
+--avatar-size: 2.5rem;
+/* change this value anything, e.g., 100px, 10rem, etc. */
+}
+h2 {font-family: Endzone Sans Medium,sans-serif;}
+.bg-primary {
+    background-color:#013369 !important;
+    color:#fff;
+}
+.rotate {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:  translateX(-50%) translateY(-50%) rotate(-90deg);
+}
+td {text-align: center; vertical-align: middle !important;}
+.circle {
+    border-radius: 50%;
+    height: var(--avatar-size);
+    text-align: center;
+    width: var(--avatar-size);
+}
+.initials {
+    font-size: calc(var(--avatar-size) / 2); /* 50% of parent */
+    line-height: 1;
+    position: relative;
+    top: calc(var(--avatar-size) / 4); /* 25% of parent */
+}
+.color  {background-color: #fff;color:#000}
+.color1 {background-color: #013369;color:#fff}
+.color2 {background-color: rgb(215,188,88);}
+.color3 {background-color: #4F2E84;color:#FEC62F;}
+.color4 {background-color: #FF0000;color:#fff}
+.color5 {background-color: #167056;color:#fff} 
+.color6 {background-color: #FFDF18;}
+.color7 {background-color: #FF00FB;color:#fff}
+.color8 {background-color: rgb(27, 72, 224);color:#fff}
+.color9 {background-color: #FE561F;}
+.color10 {background-color: #00878F;color:#fff}
+.color11 {background-color: #AA0000;color:#B3995D}
+.color12 {background-color: #FDB827;color:#542583}
+
+img {height: 50px;}
