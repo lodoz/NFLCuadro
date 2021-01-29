@@ -22,28 +22,29 @@
     <body>
 
         <nav class="navbar navbar-light bg-primary">
-            <a class="navbar-brand mx-auto" href="#">
-                <img src="assets/img/nfl.svg" alt="NFL"> <img src="assets/img/sb.svg" alt="SúperBowl">
-            </a>
+            <a class="navbar-brand mx-auto" href="index.html">
+                <img src="assets/img/nfl.svg" alt="NFL"> <img src="assets/img/sbLV.png" alt="SúperBowl">
+            </a> 
         </nav>
 
         <div class="bg-dark text-white mb-4">
             <div class="container">
+            <div class="text-center text-white" style="background-color:darkgray;"><a href="index.html?sb=LIV">Cargar SB LIV</a></div>
                 <div class="row py-4">
                     <div class="col text-md-right d-none d-md-block pt-0 pt-md-1">
                         <span>Ganadores:</span>
                     </div>
                     <div class="col">
-                        1er Qtr <span class="font-weight-bold lead" id="G1">GA</span>
+                        1er Qtr <span class="font-weight-bold lead" id="G1"></span>
                     </div>
                     <div class="col">
-                        2do Qtr <span class="font-weight-bold lead" id="G2">GA</span>
+                        2do Qtr <span class="font-weight-bold lead" id="G2"></span>
                     </div>
                     <div class="col">
-                        3er Qtr <span class="font-weight-bold lead" id="G3">EC</span>
+                        3er Qtr <span class="font-weight-bold lead" id="G3"></span>
                     </div>
                     <div class="col">
-                        Final <span class="font-weight-bold lead" id="G4">EC</span>
+                        Final <span class="font-weight-bold lead" id="G4"></span>
                     </div>
                 </div>
             </div>
@@ -220,7 +221,13 @@
         <script type="text/javascript">
             $(document).ready(function(){
                 LimpiarCuadros();
+
+                const queryString = window.location.search;
+                const urlParams = new URLSearchParams(queryString); 
+                if(urlParams.has('sb') && urlParams.get('sb') == "LIV")
+                {
                 LlenarCuadros();
+                }
             });
             function LimpiarCuadros(){
                 for (var V = 0, len = 10; V < len; V++) {
@@ -230,7 +237,7 @@
                 }
             }
             function LlenarCuadros(){
-                var l_json = '{"VTEAM":"49ers","HTEAM":"Chiefs","VNUMEROS":["3","8","2","9","0","7","5","4","1","6"],"HNUMEROS":["9","2","0","6","8","5","7","1","3","4"],"CUADROS":[';
+                var l_json =  '{"VTEAM":"49ers","HTEAM":"Chiefs","VNUMEROS":["3","8","2","9","0","7","5","4","1","6"],"HNUMEROS":["9","2","0","6","8","5","7","1","3","4"],"CUADROS":[';
                 l_json +=  '{"CUADRO":"E,I","JUGADOR":"GA","COLOR":"color1"},{"CUADRO":"G,C","JUGADOR":"GA","COLOR":"color1"}';
                 l_json += ',{"CUADRO":"A,E","JUGADOR":"TO","COLOR":"color2"},{"CUADRO":"F,C","JUGADOR":"TO","COLOR":"color2"}';
                 l_json += ',{"CUADRO":"E,E","JUGADOR":"AR","COLOR":"color3"},{"CUADRO":"C,C","JUGADOR":"AR","COLOR":"color3"}'; 
@@ -287,10 +294,9 @@
                 l_json += ',{"CUADRO":"F,A","JUGADOR":"CA","COLOR":"color7"},{"CUADRO":"G,B","JUGADOR":"CA","COLOR":"color7"}'; 
                 l_json += ',{"CUADRO":"H,F","JUGADOR":"CA","COLOR":"color7"},{"CUADRO":"H,G","JUGADOR":"CA","COLOR":"color7"}'; 
                 l_json += ',{"CUADRO":"I,E","JUGADOR":"CA","COLOR":"color7"}'; 
- 
-
+  
                 l_json += '],"GANADORES":["AM <small>SF 3 KC 7</small>","AM <small>SF 10 KC 10</small>","AM <small>SF 20 KC 10</small>","GN <small>SF 20 KC 31</small>"]}'; 
-
+           
                 var cuadro = jQuery.parseJSON(l_json);
 
                 $("#VTEAM").html('<h2 class="m-0">'+ cuadro.VTEAM +'</h2>');
