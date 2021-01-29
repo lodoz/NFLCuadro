@@ -1,5 +1,5 @@
 # NFLCuadro
-Página web para pronosticar el resultado del Super Bowl [sitio](https://lodoz.github.io/NFLCuadro/)
+Juego de lotería cuadro para el Super Bowl [sitio](https://lodoz.github.io/NFLCuadro/)
 
 ## ¿y esto? ¿Cómo se juega?
 ###Preparación
