@@ -1,0 +1,22 @@
+"JUGADORES":[
+    {"JUGADOR":"GA", "COLOR" : "color1", "NOMBRE": "Gustavo Sr"},
+    {"JUGADOR":"OG", "COLOR" : "color4", "NOMBRE": "Orlando Gutierrez"},
+    {"JUGADOR":"JO", "COLOR" : "color9", "NOMBRE": "Jorge Ovalle"},
+    {"JUGADOR":"TO", "COLOR" : "color2", "NOMBRE": "Jorge Toache"},
+    {"JUGADOR":"RA", "COLOR" : "color9", "NOMBRE": "Ricardo Avila"},
+    {"JUGADOR":"EN", "COLOR" : "color9", "NOMBRE": "Edgar Novelo"},
+    {"JUGADOR":"EG", "COLOR" : "color9", "NOMBRE": "Esteban Green"},
+    {"JUGADOR":"ST", "COLOR" : "color9", "NOMBRE": "Soco Tejeda"},
+    {"JUGADOR":"EO", "COLOR" : "color9", "NOMBRE": "Erick Ovalle"},
+    {"JUGADOR":"GJ", "COLOR" : "color11", "NOMBRE": "Gustavo Avila Jr"},
+    {"JUGADOR":"AR", "COLOR" : "color3", "NOMBRE": "Armando Revilla"},
+    {"JUGADOR":"CG", "COLOR" : "color9", "NOMBRE": "Carmen Gomez"},
+    {"JUGADOR":"AM", "COLOR" : "color6", "NOMBRE": "Arnulfo Mancera"},
+    {"JUGADOR":"LO", "COLOR" : "color9", "NOMBRE": "Lolo"},
+    {"JUGADOR":"IO", "COLOR" : "color9", "NOMBRE": "Irving Ovalle"},
+    {"JUGADOR":"RS", "COLOR" : "color9", "NOMBRE": "Raul Salas"},
+    {"JUGADOR":"LA", "COLOR" : "color9", "NOMBRE": "Luis Arjona"},
+    {"JUGADOR":"PF", "COLOR" : "color9", "NOMBRE": "Pilar Fragoso"},
+    {"JUGADOR":"KR", "COLOR" : "color9", "NOMBRE": "Karla"},
+    {"JUGADOR":"FC", "COLOR" : "color9", "NOMBRE": "Federico Cueva"}
+]

@@ -29,7 +29,11 @@
 
         <div class="bg-dark text-white mb-4">
             <div class="container">
-            <div class="text-center text-white" style="background-color:darkgray;"><a href="index.html?sb=LIV">Cargar SB LIV</a></div>
+            <div class="text-center text-white" style="background-color:darkgray;">
+                <a href="index.html?sb=LIV">Cargar SB LIV</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="#" data-toggle="modal" data-target="#exampleModalLong">Participantes</a>
+            </div>
                 <div class="row py-4">
                     <div class="col text-md-right d-none d-md-block pt-0 pt-md-1">
                         <span>Ganadores:</span>
@@ -214,6 +218,50 @@
             </div>
         </div>
 
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Listado de jugadores</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="jugadores">
+            <div class="card flex-row flex-wrap text-center" style="margin-top: 10px;">
+                <div class="card-header border-0">
+                    <img src="//placehold.it/200" alt="">
+                </div>
+                <div class="card-block px-2 " style="align-self: center;">
+                    <h4 class="card-title">Title</h4> 
+                </div> 
+            </div> 
+            <div class="card flex-row flex-wrap text-center" style="margin-top: 10px;">
+                <div class="card-header border-0">
+                    <img src="//placehold.it/200" alt="">
+                </div>
+                <div class="card-block px-2 " style="align-self: center;">
+                    <h4 class="card-title">Title</h4> 
+                </div> 
+            </div> 
+            <div class="card flex-row flex-wrap text-center" style="margin-top: 10px;">
+                <div class="card-header border-0">
+                    <img src="//placehold.it/200" alt="">
+                </div>
+                <div class="card-block px-2 " style="align-self: center;">
+                    <h4 class="card-title">Title</h4> 
+                </div> 
+            </div> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -221,12 +269,12 @@
         <script type="text/javascript">
             $(document).ready(function(){
                 LimpiarCuadros();
-
+                LlenarJugadores();
                 const queryString = window.location.search;
                 const urlParams = new URLSearchParams(queryString); 
                 if(urlParams.has('sb') && urlParams.get('sb') == "LIV")
                 {
-                LlenarCuadros();
+                    LlenarCuadros();
                 }
             });
             function LimpiarCuadros(){
@@ -235,6 +283,45 @@
                         document.getElementById((V + 10).toString(36).toUpperCase() + ',' +(H + 10).toString(36).toUpperCase()).innerHTML = '<div class="circle color mx-auto"><span class="initials">-</span></div>';
                     }
                 }
+            }
+            function LlenarJugadores(){
+                var l_json =  '{"JUGADORES":[';
+                    l_json += '{"JUGADOR":"GA", "COLOR" : "color1", "NOMBRE": "Gustavo Sr"},';
+                    l_json += '{"JUGADOR":"OG", "COLOR" : "color4", "NOMBRE": "Orlando Gutierrez"},';
+                    l_json += '{"JUGADOR":"JO", "COLOR" : "color9", "NOMBRE": "Jorge Ovalle"},';
+                    l_json += '{"JUGADOR":"TO", "COLOR" : "color2", "NOMBRE": "Jorge Toache"},';
+                    l_json += '{"JUGADOR":"RA", "COLOR" : "color9", "NOMBRE": "Ricardo Avila"},';
+                    l_json += '{"JUGADOR":"EN", "COLOR" : "color9", "NOMBRE": "Edgar Novelo"},';
+                    l_json += '{"JUGADOR":"EG", "COLOR" : "color9", "NOMBRE": "Esteban Green"},';
+                    l_json += '{"JUGADOR":"ST", "COLOR" : "color9", "NOMBRE": "Soco Tejeda"},';
+                    l_json += '{"JUGADOR":"EO", "COLOR" : "color9", "NOMBRE": "Erick Ovalle"},';
+                    l_json += '{"JUGADOR":"GJ", "COLOR" : "color11", "NOMBRE": "Gustavo Avila Jr"},';
+                    l_json += '{"JUGADOR":"AR", "COLOR" : "color3", "NOMBRE": "Armando Revilla"},';
+                    l_json += '{"JUGADOR":"CG", "COLOR" : "color9", "NOMBRE": "Carmen Gomez"},';
+                    l_json += '{"JUGADOR":"AM", "COLOR" : "color6", "NOMBRE": "Arnulfo Mancera"},';
+                    l_json += '{"JUGADOR":"LO", "COLOR" : "color9", "NOMBRE": "Lolo"},';
+                    l_json += '{"JUGADOR":"IO", "COLOR" : "color9", "NOMBRE": "Irving Ovalle"},';
+                    l_json += '{"JUGADOR":"RS", "COLOR" : "color9", "NOMBRE": "Raul Salas"},';
+                    l_json += '{"JUGADOR":"LA", "COLOR" : "color9", "NOMBRE": "Luis Arjona"},';
+                    l_json += '{"JUGADOR":"PF", "COLOR" : "color13", "NOMBRE": "Pilar Fragoso"},';
+                    l_json += '{"JUGADOR":"KR", "COLOR" : "color9", "NOMBRE": "Karla"},';
+                    l_json += '{"JUGADOR":"FC", "COLOR" : "color9", "NOMBRE": "Federico Cueva"}';
+                    l_json += ']}';
+                
+                    var jugadores = jQuery.parseJSON(l_json);
+                    var html =  '';
+                 $.each(jugadores.JUGADORES, function (index, value) {
+                    html += '<div class="card flex-row flex-wrap text-center" style="margin-top: 10px;">';
+                        html += '<div class="card-header border-0">';
+                            html += '<div class="circle '+ value.COLOR + ' mx-auto"><span class="initials">'+ value.JUGADOR +'</span></div>';
+                        html += '</div>';
+                        html += '<div class="card-block px-2 " style="align-self: center;">';
+                            html += '<h4 class="card-title">'+ value.NOMBRE + '</h4>';
+                        html += '</div>';
+                    html += '</div>';
+                }); 
+
+                document.getElementById("jugadores").innerHTML = html;
             }
             function LlenarCuadros(){
                 var l_json =  '{"VTEAM":"49ers","HTEAM":"Chiefs","VNUMEROS":["3","8","2","9","0","7","5","4","1","6"],"HNUMEROS":["9","2","0","6","8","5","7","1","3","4"],"CUADROS":[';
