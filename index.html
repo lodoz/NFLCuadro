@@ -274,6 +274,9 @@
                 const urlParams = new URLSearchParams(queryString); 
                 if(urlParams.has('sb') && urlParams.get('sb') == "LIV")
                 {
+                    LlenarCuadrosLIV();
+                }
+                else{
                     LlenarCuadros();
                 }
             });
@@ -294,7 +297,7 @@
                     l_json += '{"JUGADOR":"EN", "COLOR" : "color9", "NOMBRE": "Edgar Novelo"},';
                     l_json += '{"JUGADOR":"EG", "COLOR" : "color9", "NOMBRE": "Esteban Green"},';
                     l_json += '{"JUGADOR":"ST", "COLOR" : "color9", "NOMBRE": "Soco Tejeda"},';
-                    l_json += '{"JUGADOR":"EO", "COLOR" : "color9", "NOMBRE": "Erick Ovalle"},';
+                    l_json += '{"JUGADOR":"EO", "COLOR" : "color14", "NOMBRE": "Erick Ovalle"},';
                     l_json += '{"JUGADOR":"GJ", "COLOR" : "color11", "NOMBRE": "Gustavo Avila Jr"},';
                     l_json += '{"JUGADOR":"AR", "COLOR" : "color3", "NOMBRE": "Armando Revilla"},';
                     l_json += '{"JUGADOR":"CG", "COLOR" : "color9", "NOMBRE": "Carmen Gomez"},';
@@ -323,7 +326,7 @@
 
                 document.getElementById("jugadores").innerHTML = html;
             }
-            function LlenarCuadros(){
+            function LlenarCuadrosLIV(){
                 var l_json =  '{"VTEAM":"49ers","HTEAM":"Chiefs","VNUMEROS":["3","8","2","9","0","7","5","4","1","6"],"HNUMEROS":["9","2","0","6","8","5","7","1","3","4"],"CUADROS":[';
                 l_json +=  '{"CUADRO":"E,I","JUGADOR":"GA","COLOR":"color1"},{"CUADRO":"G,C","JUGADOR":"GA","COLOR":"color1"}';
                 l_json += ',{"CUADRO":"A,E","JUGADOR":"TO","COLOR":"color2"},{"CUADRO":"F,C","JUGADOR":"TO","COLOR":"color2"}';
@@ -383,6 +386,92 @@
                 l_json += ',{"CUADRO":"I,E","JUGADOR":"CA","COLOR":"color7"}'; 
   
                 l_json += '],"GANADORES":["AM <small>SF 3 KC 7</small>","AM <small>SF 10 KC 10</small>","AM <small>SF 20 KC 10</small>","GN <small>SF 20 KC 31</small>"]}'; 
+           
+                var cuadro = jQuery.parseJSON(l_json);
+
+                $("#VTEAM").html('<h2 class="m-0">'+ cuadro.VTEAM +'</h2>');
+                $("#HTEAM").html('<div class="rotate"><h2 class="m-0">'+ cuadro.HTEAM +'</h2></div>');
+
+                for (var i = 0, len = cuadro.VNUMEROS.length; i < len; i++) {
+                     $("#V"+ (i + 10).toString(36).toUpperCase()).html(cuadro.VNUMEROS[i]);
+                 }
+
+                 for (var i = 0, len = cuadro.HNUMEROS.length; i < len; i++) {
+                     $("#H"+ (i + 10).toString(36).toUpperCase()).html(cuadro.HNUMEROS[i]);
+                 }
+
+                 for (var i = 0, len = cuadro.GANADORES.length; i < len; i++) {
+                     $("#G"+ (i + 1).toString()).html(cuadro.GANADORES[i]);
+                 }
+
+                 $.each(cuadro.CUADROS, function (index, value) {
+                    document.getElementById(value.CUADRO).innerHTML = '<div class="circle '+ value.COLOR + ' mx-auto"><span class="initials">'+ value.JUGADOR +'</span></div>';
+                });
+            }
+
+            function LlenarCuadros(){
+                var l_json =  '{"VTEAM":"Equipo Horizontal","HTEAM":"Equipo Vertical",';
+                l_json +=  '"VNUMEROS":["A","B","C","D","E","F","G","H","I","J"],';
+                l_json +=  '"HNUMEROS":["Z","Y","X","W","V","U","T","S","R","Q"],';
+                l_json +=  '"CUADROS":[';
+                l_json +=  '{"CUADRO":"B,B","JUGADOR":"GA","COLOR":"color1"},{"CUADRO":"F,G","JUGADOR":"GA","COLOR":"color1"}';
+                // l_json += ',{"CUADRO":"A,E","JUGADOR":"TO","COLOR":"color2"},{"CUADRO":"F,C","JUGADOR":"TO","COLOR":"color2"}';
+                // l_json += ',{"CUADRO":"E,E","JUGADOR":"AR","COLOR":"color3"},{"CUADRO":"C,C","JUGADOR":"AR","COLOR":"color3"}'; 
+                // l_json += ',{"CUADRO":"E,D","JUGADOR":"OR","COLOR":"color4"},{"CUADRO":"G,G","JUGADOR":"OR","COLOR":"color4"}'; 
+                // l_json += ',{"CUADRO":"B,G","JUGADOR":"EN","COLOR":"color5"},{"CUADRO":"A,F","JUGADOR":"EN","COLOR":"color5"}'; 
+                // l_json += ',{"CUADRO":"F,D","JUGADOR":"AM","COLOR":"color6"},{"CUADRO":"H,I","JUGADOR":"AM","COLOR":"color6"}'; 
+                // l_json += ',{"CUADRO":"C,J","JUGADOR":"CA","COLOR":"color7"},{"CUADRO":"J,C","JUGADOR":"CA","COLOR":"color7"}'; 
+                // l_json += ',{"CUADRO":"C,D","JUGADOR":"GN","COLOR":"color8"},{"CUADRO":"D,G","JUGADOR":"GN","COLOR":"color8"}'; 
+                // l_json += ',{"CUADRO":"I,D","JUGADOR":"AC","COLOR":"color9"},{"CUADRO":"I,I","JUGADOR":"AC","COLOR":"color9"}'; 
+                // l_json += ',{"CUADRO":"I,H","JUGADOR":"RC","COLOR":"color10"},{"CUADRO":"J,F","JUGADOR":"RC","COLOR":"color10"}'; 
+                // l_json += ',{"CUADRO":"J,B","JUGADOR":"CH","COLOR":"color11"},{"CUADRO":"F,F","JUGADOR":"CH","COLOR":"color11"}'; 
+                // l_json += ',{"CUADRO":"D,B","JUGADOR":"LB","COLOR":"color12"}';
+                // l_json +=  ',{"CUADRO":"F,E","JUGADOR":"GA","COLOR":"color1"},{"CUADRO":"B,D","JUGADOR":"GA","COLOR":"color1"}';
+                // l_json +=  ',{"CUADRO":"I,B","JUGADOR":"GA","COLOR":"color1"},{"CUADRO":"H,H","JUGADOR":"GA","COLOR":"color1"}';
+                // l_json += ',{"CUADRO":"C,H","JUGADOR":"TO","COLOR":"color2"},{"CUADRO":"B,I","JUGADOR":"TO","COLOR":"color2"}';
+                // l_json += ',{"CUADRO":"I,G","JUGADOR":"TO","COLOR":"color2"},{"CUADRO":"J,I","JUGADOR":"TO","COLOR":"color2"}'; 
+                // l_json += ',{"CUADRO":"A,A","JUGADOR":"AR","COLOR":"color3"},{"CUADRO":"G,H","JUGADOR":"AR","COLOR":"color3"}'; 
+                // l_json += ',{"CUADRO":"J,J","JUGADOR":"AR","COLOR":"color3"},{"CUADRO":"B,H","JUGADOR":"AR","COLOR":"color3"}'; 
+                // l_json += ',{"CUADRO":"D,I","JUGADOR":"OR","COLOR":"color4"},{"CUADRO":"B,B","JUGADOR":"OR","COLOR":"color4"}'; 
+                // l_json += ',{"CUADRO":"H,E","JUGADOR":"OR","COLOR":"color4"},{"CUADRO":"F,J","JUGADOR":"OR","COLOR":"color4"}'; 
+                // l_json += ',{"CUADRO":"H,D","JUGADOR":"EN","COLOR":"color5"},{"CUADRO":"J,G","JUGADOR":"EN","COLOR":"color5"}'; 
+                // l_json += ',{"CUADRO":"A,I","JUGADOR":"EN","COLOR":"color5"},{"CUADRO":"D,E","JUGADOR":"EN","COLOR":"color5"}'; 
+                // l_json += ',{"CUADRO":"E,C","JUGADOR":"AM","COLOR":"color6"},{"CUADRO":"C,G","JUGADOR":"AM","COLOR":"color6"}'; 
+                // l_json += ',{"CUADRO":"G,F","JUGADOR":"AM","COLOR":"color6"},{"CUADRO":"F,I","JUGADOR":"AM","COLOR":"color6"}'; 
+                // l_json += ',{"CUADRO":"D,D","JUGADOR":"GN","COLOR":"color8"},{"CUADRO":"D,C","JUGADOR":"GN","COLOR":"color8"}'; 
+                // l_json += ',{"CUADRO":"H,C","JUGADOR":"GN","COLOR":"color8"},{"CUADRO":"G,D","JUGADOR":"GN","COLOR":"color8"}'; 
+                // l_json += ',{"CUADRO":"A,J","JUGADOR":"AC","COLOR":"color9"},{"CUADRO":"J,A","JUGADOR":"AC","COLOR":"color9"}';
+                // l_json += ',{"CUADRO":"G,E","JUGADOR":"AC","COLOR":"color9"},{"CUADRO":"C,I","JUGADOR":"AC","COLOR":"color9"}';
+                // l_json += ',{"CUADRO":"E,G","JUGADOR":"RC","COLOR":"color10"},{"CUADRO":"F,B","JUGADOR":"RC","COLOR":"color10"}'; 
+                // l_json += ',{"CUADRO":"A,D","JUGADOR":"RC","COLOR":"color10"},{"CUADRO":"C,E","JUGADOR":"RC","COLOR":"color10"}';  
+                // l_json += ',{"CUADRO":"E,A","JUGADOR":"CH","COLOR":"color11"},{"CUADRO":"A,G","JUGADOR":"CH","COLOR":"color11"}'; 
+                // l_json += ',{"CUADRO":"J,E","JUGADOR":"CH","COLOR":"color11"},{"CUADRO":"B,J","JUGADOR":"CH","COLOR":"color11"}'; 
+                // l_json += ',{"CUADRO":"A,B","JUGADOR":"GA","COLOR":"color1"},{"CUADRO":"D,F","JUGADOR":"GA","COLOR":"color1"}';
+                // l_json += ',{"CUADRO":"J,D","JUGADOR":"GA","COLOR":"color1"}';
+                // l_json += ',{"CUADRO":"B,E","JUGADOR":"TO","COLOR":"color2"},{"CUADRO":"H,A","JUGADOR":"TO","COLOR":"color2"}';
+                // l_json += ',{"CUADRO":"G,J","JUGADOR":"TO","COLOR":"color2"}';
+                // l_json += ',{"CUADRO":"H,B","JUGADOR":"AR","COLOR":"color3"},{"CUADRO":"D,H","JUGADOR":"AR","COLOR":"color3"}'; 
+                // l_json += ',{"CUADRO":"I,F","JUGADOR":"AR","COLOR":"color3"}'; 
+                // l_json += ',{"CUADRO":"I,A","JUGADOR":"OR","COLOR":"color4"},{"CUADRO":"C,F","JUGADOR":"OR","COLOR":"color4"}'; 
+                // l_json += ',{"CUADRO":"J,H","JUGADOR":"OR","COLOR":"color4"}'; 
+                // l_json += ',{"CUADRO":"B,A","JUGADOR":"EN","COLOR":"color5"},{"CUADRO":"F,H","JUGADOR":"EN","COLOR":"color5"}'; 
+                // l_json += ',{"CUADRO":"C,B","JUGADOR":"EN","COLOR":"color5"}';
+                // l_json += ',{"CUADRO":"G,I","JUGADOR":"AM","COLOR":"color6"},{"CUADRO":"B,C","JUGADOR":"AM","COLOR":"color6"}'; 
+                // l_json += ',{"CUADRO":"I,J","JUGADOR":"AM","COLOR":"color6"}';  
+                // l_json += ',{"CUADRO":"E,B","JUGADOR":"GN","COLOR":"color8"},{"CUADRO":"I,C","JUGADOR":"GN","COLOR":"color8"}'; 
+                // l_json += ',{"CUADRO":"E,H","JUGADOR":"GN","COLOR":"color8"}'; 
+                // l_json += ',{"CUADRO":"E,F","JUGADOR":"AC","COLOR":"color9"},{"CUADRO":"F,G","JUGADOR":"AC","COLOR":"color9"}'; 
+                // l_json += ',{"CUADRO":"H,J","JUGADOR":"AC","COLOR":"color9"}'; 
+                // l_json += ',{"CUADRO":"G,A","JUGADOR":"RC","COLOR":"color10"},{"CUADRO":"D,J","JUGADOR":"RC","COLOR":"color10"}'; 
+                // l_json += ',{"CUADRO":"B,F","JUGADOR":"RC","COLOR":"color10"}'; 
+                // l_json += ',{"CUADRO":"A,C","JUGADOR":"CH","COLOR":"color11"},{"CUADRO":"E,J","JUGADOR":"CH","COLOR":"color11"}'; 
+                // l_json += ',{"CUADRO":"D,A","JUGADOR":"CH","COLOR":"color11"}'; 
+                // l_json += ',{"CUADRO":"A,H","JUGADOR":"CA","COLOR":"color7"},{"CUADRO":"C,A","JUGADOR":"CA","COLOR":"color7"}'; 
+                // l_json += ',{"CUADRO":"F,A","JUGADOR":"CA","COLOR":"color7"},{"CUADRO":"G,B","JUGADOR":"CA","COLOR":"color7"}'; 
+                // l_json += ',{"CUADRO":"H,F","JUGADOR":"CA","COLOR":"color7"},{"CUADRO":"H,G","JUGADOR":"CA","COLOR":"color7"}'; 
+                // l_json += ',{"CUADRO":"I,E","JUGADOR":"CA","COLOR":"color7"}'; 
+  
+                l_json += '],"GANADORES":["","","",""]}'; 
            
                 var cuadro = jQuery.parseJSON(l_json);
 
