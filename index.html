@@ -292,24 +292,30 @@
 
                 $("#VTEAM").html('<h2 class="m-0">HORIZONTAL</h2>');
                 $("#HTEAM").html('<div class="rotate"><h2 class="m-0">VERTICAL</h2></div>');
+                let letrasNumerosVertical = 'A'.charCodeAt();
+                let letrasNumerosHorizontal = 'A'.charCodeAt();
 
-                for (var i = 0, len = 9; i < len; i++) {
-                     $("#V"+ (i + 10).toString(36).toUpperCase()).html("");
+                for (var i = 0, len = 10; i < len; i++) {
+                     $("#V"+ (i + 10).toString(36).toUpperCase()).html(String.fromCharCode(letrasNumerosVertical++));
                  }
 
-                 for (var i = 0, len = 9; i < len; i++) {
-                     $("#H"+ (i + 10).toString(36).toUpperCase()).html("");
+                 for (var i = 0, len = 10; i < len; i++) {
+                     $("#H"+ (i + 10).toString(36).toUpperCase()).html(String.fromCharCode(letrasNumerosHorizontal++));
                  }
 
-                 for (var i = 0, len = 3; i < len; i++) {
+                 for (var i = 0, len = 4; i < len; i++) {
                      $("#G"+ (i + 1).toString()).html("");
                  }
 
-                for (var V = 0, len = 10; V < len; V++) {
+                 letrasNumerosVertical = 'A'.charCodeAt();
+                 letrasNumerosHorizontal = 'A'.charCodeAt();
+                 for (var V = 0, len = 10; V < len; V++) {
                     for (var H = 0, len = 10; H < len; H++) {
-                        document.getElementById((V + 10).toString(36).toUpperCase() + ',' +(H + 10).toString(36).toUpperCase()).innerHTML = '<div class="circle color mx-auto"><span class="initials">-</span></div>';
+                        document.getElementById((V + 10).toString(36).toUpperCase() + ',' +(H + 10).toString(36).toUpperCase()).innerHTML 
+                        = '<div class="circle color mx-auto"><span class="initials">'+ String.fromCharCode(letrasNumerosVertical) +'-'+ String.fromCharCode(letrasNumerosHorizontal++) +'</span></div>';
                     }
-                }
+                    letrasNumerosVertical++;
+                 }
             } 
 
             function LlenarJugadores(){
