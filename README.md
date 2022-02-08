@@ -19,10 +19,10 @@ Al final se rifan los equipos, uno para vertical y otro para horizontal.
 
 **Ganadores y premios**:  
 Son 4 premios iguales, que se dividen la bolsa acumulada de la venta de los cuadros. Durante el partido, los marcadores parciales de cada cuarto cuartos y el marcador final determinan a los ganadores cada premio.
-Para determinar el ganador se toman las unidades del marcador de cada equipo, y se ubica el eje del equipo y la unidad del marcador correspondiente a ese equipo, para obtener una coordenada, y la otra coordenada con el marcador y equipo contrario y el ganador son las iniciales de donde concuerden los registros en la matriz, será el ganador de ese cuarto, por ejemplo, si el primer cuarto termina: CHIEFS 7 – 3 49ERS el ganador será cuyo cuadro cruce el 3 con el 7 en la posición seleccionada. Si en el medio tiempo el partido termina CHIEFS 10 – 10 49ERS el ganador se determina con las unidades del marcador, en este ejemplo 0 y 0, y así por cada cuarto. 
+Para determinar el ganador se toman las unidades del marcador de cada equipo, y se ubica el eje del equipo y la unidad del marcador correspondiente a ese equipo, para obtener una coordenada, y la otra coordenada con el marcador y equipo contrario y el ganador son las iniciales de donde concuerden los registros en la matriz, será el ganador de ese cuarto, por ejemplo, si el primer cuarto termina: BENGALS 7 – 3 RAMS el ganador será cuyo cuadro cruce el 3 con el 7 en la posición seleccionada. Si en el medio tiempo el partido termina BENGALS 10 – 10 RAMS el ganador se determina con las unidades del marcador, en este ejemplo 0 y 0, y así por cada cuarto. 
 ¡Al finalizar el partido se tienen los 4 ganadores de los cuadros y el campeón del Super Bowl!
 
-Este cuadro tiene el ejemplo del SuperBowl LIV [sitio](https://lodoz.github.io/NFLCuadro/)
+Este cuadro tiene el ejemplo del SuperBowl LVI [sitio](https://lodoz.github.io/NFLCuadro/)
 
 ## Por hacer
 Queda mucho por mejorar, automatizar y perfeccionar, si te sirve, y tienes alguna sugerencia o hacer Pull request a alguna mejora. 
