@@ -340,7 +340,7 @@
                     l_json += '{"JUGADOR":"DH", "COLOR" : "color6", "NOMBRE": "Daniel Hidalgo"},';
                     l_json += '{"JUGADOR":"PF", "COLOR" : "color13", "NOMBRE": "Pilar Fragoso"},';
                     l_json += '{"JUGADOR":"LA", "COLOR" : "color18", "NOMBRE": "Luis Arjona"},';
-                    l_json += '{"JUGADOR":"KD", "COLOR" : "color16", "NOMBRE": "Karla Dzul"},';
+                    l_json += '{"JUGADOR":"KD", "COLOR" : "color16", "NOMBRE": "Karla Dzul"}';
                     l_json += ']}';
                 
                     var jugadores = jQuery.parseJSON(l_json);
@@ -540,11 +540,11 @@
             
             function LlenarCuadros(){
                 var l_json =  '{"VTEAM":"HORIZONTAL","HTEAM":"VERTICAL",';
-                //l_json +=  '"VNUMEROS":["A","","6","4","7","0","8","1","2","9"],';
-                //l_json +=  '"HNUMEROS":["7","8","2","4","9","1","0","3","5","6"],';
+                l_json +=  '"VNUMEROS":["A","B","C","D","E","F","G","H","I","J"],';
+                l_json +=  '"HNUMEROS":["A","B","C","D","E","F","G","H","I","J"],';
                 l_json +=  '"CUADROS":['; 
                 l_json +=  '{"CUADRO":"B,C","JUGADOR":"GA","COLOR":"color1"},{"CUADRO":"F,E","JUGADOR":"GA","COLOR":"color1"}';
-                // l_json += ',{"CUADRO":"G,E","JUGADOR":"OG","COLOR":"color4"},{"CUADRO":"J,J","JUGADOR":"OG","COLOR":"color4"}';
+                l_json += ',{"CUADRO":"B,B","JUGADOR":"AR","COLOR":"color3"},{"CUADRO":"H,H","JUGADOR":"OG","COLOR":"color3"}';
                 // l_json += ',{"CUADRO":"D,F","JUGADOR":"JO","COLOR":"color15"},{"CUADRO":"G,D","JUGADOR":"JO","COLOR":"color15"}'; 
                 // l_json += ',{"CUADRO":"D,C","JUGADOR":"TO","COLOR":"color2"},{"CUADRO":"H,G","JUGADOR":"TO","COLOR":"color2"}'; 
                 // l_json += ',{"CUADRO":"E,E","JUGADOR":"RA","COLOR":"color5"},{"CUADRO":"I,B","JUGADOR":"RA","COLOR":"color5"}'; 
@@ -610,7 +610,7 @@
                 // l_json += ',{"CUADRO":"J,F","JUGADOR":"RS","COLOR":"color17"}'; 
                 // l_json += ',{"CUADRO":"E,J","JUGADOR":"RS","COLOR":"color17"}'; 
 
-                //l_json += '],"GANADORES":["GJ <small>TB 7 KC 3</small>","EO <small>TB 21 KC 6</small>","RS <small>TB 31 KC 9</small>","RS <small>TB 31 KC 9</small>"]}'; 
+                l_json += '],"GANADORES":["GJ <small>TB 7 KC 3</small>","EO <small>TB 21 KC 6</small>","RS <small>TB 31 KC 9</small>","RS <small>TB 31 KC 9</small>"]}'; 
                 
                 var cuadro = jQuery.parseJSON(l_json);
 
